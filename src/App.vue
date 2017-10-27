@@ -1,37 +1,27 @@
 <template>
-	<div v-on:click='cli'>
-		<transition name='slide-fade' mode='out-in'>
-		<div v-if='seen'>
-			asdasdasdadsad
-		</div>
-		</transition>
-		<transition name='slide-fade' mode='out-in'>
-		<div v-if='!seen'>
-			ffffffffffffffffff
-		</div>
-		</transition>
-		
+	<div class='App'>
+		<router-view v-bind:class="{'container':!isMobile}"></router-view>
 	</div>
 </template>
 
 <script>
 	export default{
-		data(){
-			return {
-				width:document.documentElement.clientWidth,
-				height:document.documentElement.clientHeight,
-				seen:true
-			}
-		},
-		methods:{
-			cli:function(){
-				this.seen = !this.seen
+		computed:{
+			isMobile:function(){
+				return this.$store.state.width < 720
 			}
 		}
+		
 		
 	}
 </script>
 
 <style>
-	
+	/*only mobile extend this*/
+	@media screen and (max-width:720px){
+		.App{
+			width:100%;
+			height:100%;
+		}
+	}
 </style>

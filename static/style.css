@@ -1,3 +1,17 @@
+html{
+	height:100%;
+}
 body{
+	height:100%;
 	background-color:#fff5f7;
+}
+#app{
+	position:absolute;
+	width:100%;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
 }
